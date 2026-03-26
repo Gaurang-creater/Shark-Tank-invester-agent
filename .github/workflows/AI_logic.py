@@ -2,8 +2,8 @@ import json
 import os
 import google.generativeai as genai
 
-# 🔑 Configure Gemini (use env variable later)
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
 #For api key very simple go to google API and generate API key and copy paste absolutely free
 #NO billing is required
 model = genai.GenerativeModel("gemini-2.5-flash")
