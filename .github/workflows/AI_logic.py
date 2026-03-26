@@ -3,9 +3,8 @@ import os
 import google.generativeai as genai
 
 
-genai.configure(api_key="YOUR_GEMINI_API_KEY")
-#For api key very simple go to google API and generate API key and copy paste absolutely free
-#NO billing is required
+genai.configure(api_key="AIzaSyBS_xWJR2_5tbaT-Rn5s2xY-WLmBNMm5k8")
+
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 
@@ -63,35 +62,50 @@ Tasks:
    - current startup numbers
    - past cases
 
-Return output in STRICT JSON format:
-{{
-  "questions": ["", "", ""],
-  "decision": "",
-  "valuation_range": "",
-  "reasoning": ""
-}}
+Return output in EXACTLY this format:
+
+Startup: <name>
+Decision: <invest/pass>
+Score: <0-10>
+
+Strengths:
+- point 1
+- point 2
+- point 3
+
+Weaknesses:
+- point 1
+- point 2
+- point 3
+
+Risks:
+- point 1
+- point 2
+- point 3
+
+Valuation:
+<short comment>
+
+Final Verdict:
+<sharp reasoning>
+
+Rules:
+- Follow this format EXACTLY
+- No extra text before or after
+- Keep it clean and readable
 """
 
     response = model.generate_content(prompt)
     return response.text
 
 
-#  MAIN FUNCTION (Gaurang uses this)
-
+# 🧠 MAIN FUNCTION 
 def analyze_startup(pitch: str):
     relevant_data = retrieve_relevant_data(pitch, DATASET)
     context = build_context(relevant_data)
 
     raw_output = call_ai(pitch, context)
 
-    try:
-        return json.loads(raw_output)
-    except:
-        return {
-            "error": "Invalid JSON from AI",
-            "raw": raw_output
-        }
-
-#from main import analyze_startup
-#result = analyze_startup(pitch)
-#Put this code in AI and say have to make backend frontend for this.
+    
+    return raw_output
+    
