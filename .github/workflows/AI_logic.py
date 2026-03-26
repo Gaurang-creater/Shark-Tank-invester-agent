@@ -94,4 +94,4 @@ def analyze_startup(pitch: str):
 
 #from main import analyze_startup
 #result = analyze_startup(pitch)
-#Put this code in AI and say have to make backend for this.
+#Put this code in AI and say have to make backend frontend for this.
