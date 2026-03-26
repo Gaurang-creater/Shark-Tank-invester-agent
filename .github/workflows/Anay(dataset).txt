@@ -1,0 +1,50 @@
+#Data set should looks like this an example of a fake startup given below the AI model can be tweaked based on datapoints also if 
+#format of data is changed.
+
+[
+  {
+    "startup": "QuickBite",
+    "sector": "food",
+    "subsector": "cloud kitchen",
+
+    "metrics": {
+      "monthly_revenue": 3600000,
+      "users": 1200,
+      "growth_rate": "15% MoM",
+      "profit_margin": "low",
+      "burn_rate": "high",
+      "churn_rate": "unknown"
+    },
+
+    "funding": {
+      "ask_amount": 10000000,
+      "equity_offered": 5,
+      "valuation": 200000000
+    },
+
+    "founder_background": "first-time founder",
+
+    "strengths": [
+      "strong growth",
+      "subscription model",
+      "urban demand"
+    ],
+
+    "weaknesses": [
+      "low margins",
+      "high logistics cost",
+      "scaling risk"
+    ],
+
+    "investor_decision": "no",
+
+    "investor_reasoning": "High revenue growth but poor unit economics and scaling risk make valuation unjustified.",
+
+    "comparable_tags": [
+      "high growth",
+      "low margin",
+      "food delivery",
+      "subscription"
+    ]
+  }
+]
